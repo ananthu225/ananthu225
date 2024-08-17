@@ -1,5 +1,5 @@
 const { kurukkan, mode ,sendMenu, sendSegMenu, setMenuType } = require("../lib/");
-izumi({
+kurukkan({
     pattern: "menu ?(.*)",
     desc: "kurukkan user manual",
     fromMe: mode,
@@ -7,7 +7,7 @@ izumi({
 }, async (message, match) => {
     await sendMenu(message, match);
 });
-izumi({
+kurukkan({
     pattern: "setmenu ?(.*)",
     desc: "kurukkan menu control panel",
     fromMe: true,
@@ -15,7 +15,7 @@ izumi({
 }, async (message, match) => {
     await setMenuType(message, match);
 });
-const pluginTypes = ['AnimeImage','insta', 'downloader', 'info', 'whatsapp', 'group', 'media', 'AnimeVideo', 'user', 'generator'];
+const pluginTypes = ['AnimeImage', 'downloader', 'info', 'whatsapp', 'group', 'media', 'AnimeVideo', 'user', 'generator'];
 
 pluginTypes.forEach((type) => {
 kurukkan({
